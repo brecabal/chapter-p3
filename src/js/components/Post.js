@@ -18,21 +18,36 @@ const addBtn = (btn, valueBtn) => {
   return btn;
 }
 
-// validar
+
 const validatePost = (post, btn) => {
   (post.value === '' ) ? btnDisabled(btn) : btnEnabled(btn);
 }
 
-// agrega nuevo post
-const createPost = (post, contain, btn) => {
-  const containerPost = document.createElement('div');
-  const newPost = document.createElement('p');
+// // agrega nuevo post
+// const createPost = (post, contain) => {
+//   const containerPost = document.createElement('div');
+//   const newPost = document.createElement('p');
 
-  newPost.appendChild(document.createTextNode(post.value));
-  containerPost.appendChild(newPost);
+//   newPost.appendChild(document.createTextNode(post.value));
+//   containerPost.appendChild(newPost);
+//   // validatePost(post, btn);
+//   // primerito
+//   contain.insertBefore(newPost, contain.childNodes[0]);
+//   post.value = '';
+// }
+
+// agrega nuevo post
+const createPost = (post, contain) => {
+  const newPost =+ `
+    <div>
+      <p>${post.value}</p>
+    </div>
+  `;
   // validatePost(post, btn);
   // primerito
-  contain.insertBefore(newPost, contain.childNodes[0]);
+  // contain.insertBefore(newPost, contain.childNodes[0]);
+  return newPost;
   post.value = '';
 }
+
 
