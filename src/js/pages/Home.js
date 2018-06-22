@@ -9,6 +9,11 @@ const postType = document.createElement('select');
 const optionPublic = document.createElement('option');
 const optionFriends = document.createElement('option');
 
+postInput.setAttribute('placeholder', '¿Qué está pasando?');
+postInput.setAttribute('autofocus', 'autofocus');
+optionPublic.value = 'public';
+optionFriends.value = 'friends';
+
 root.appendChild(postOfUser);
 root.appendChild(containerPosts);
 postOfUser.appendChild(figureUser);
@@ -19,15 +24,10 @@ postContain.appendChild(addBtn(postBtn, 'Publicar'));
 postType.appendChild(optionPublic).appendChild(document.createTextNode('Público'));
 postType.appendChild(optionFriends).appendChild(document.createTextNode('Amigos'));
 
-postInput.setAttribute('placeholder', '¿Qué está pasando?');
-postInput.setAttribute('autofocus', 'autofocus');
-optionPublic.value = 'public';
-optionFriends.value = 'friends';
-
 postBtn.addEventListener('click', () => {
   createPost(postInput, containerPosts, postBtn);
 });
 
 postInput.addEventListener('keyup', () => {
   validatePost(postInput, postBtn);
-})
+});
