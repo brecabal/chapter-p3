@@ -18,6 +18,7 @@
 // botones inhabilitado/ habilitado
 const btnDisabled = (btn) => {
   btn.setAttribute('disabled', 'disabled');
+  btn.classList.remove('enabled');
   btn.classList.add('disabled');
 };
 
@@ -59,7 +60,7 @@ const createPost = (post, contain, btn) => {
   navPost.appendChild(ulPost);
   ulPost.appendChild(document.createElement('li')).appendChild(editePost).appendChild(document.createTextNode('Editar'));
   ulPost.appendChild(document.createElement('li')).appendChild(deletePost).appendChild(document.createTextNode('Eliminar'));
-  contain.insertBefore(containerPost, contain.childNodes[0]);
+  contain.insertBefore(containerPost, contain.firstChild);
 
   deletePost.addEventListener('click', () => {
     const confirmAction = (confirm) => {
@@ -90,7 +91,15 @@ const createPost = (post, contain, btn) => {
     confirmAction(confirm);
   });
 
-  // editePost.addEventListener('click', );
+  editePost.addEventListener('click', () => {
+    editePost.textContent = 'Guardar';
+    const inputText = document.createElement('input');
+    containerPost.appendChild(inputText);
+    console.log(newPost.firstChild);
+
+    // inputText.value = newPost.firstChild;
+
+  });
 
   validatePost(post, btn);
   post.value = '';
