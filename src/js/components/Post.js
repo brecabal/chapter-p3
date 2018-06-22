@@ -51,7 +51,9 @@ const createPost = (post, contain, btn) => {
   const confirm = document.createElement('div');
 
   editePost.setAttribute('href', '#');
+  editePost.classList.add('edite-post');
   deletePost.setAttribute('href', '#');
+  deletePost.classList.add('delete-post');
 
   containerPost.appendChild(newPost);
   containerPost.appendChild(navPost);
@@ -71,7 +73,9 @@ const createPost = (post, contain, btn) => {
       const cancelDelete = document.createElement('a');
 
       confirmDelete.setAttribute('href', '#');
+      confirmDelete.classList.add('edite-post');
       cancelDelete.setAttribute('href', '#');
+      cancelDelete.classList.add('delete-post');
 
       containerConfirm.appendChild(infoConfirm).appendChild(document.createTextNode('¿Estás seguro?'));
       containerConfirm.appendChild(ulConfirm).appendChild(document.createElement('li')).appendChild(confirmDelete).appendChild(document.createTextNode('Aceptar'));

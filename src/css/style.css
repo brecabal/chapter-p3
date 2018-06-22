@@ -4,6 +4,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 section, form, input, article {
   border: 1px solid #43CFB9;
   padding: 14px;
@@ -42,3 +46,24 @@ ul li {
   padding-right: 7px;
   padding-left: 7px;
 }
+
+.my-posts {
+  background-color : #43CFB9;
+  color: #FFFFFF;
+  padding: 14px;
+  text-align: center;
+}
+
+.edite-post {
+  border: 1px solid #43CFB9;
+  padding: 7px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #43CFB9;
+}
+
+.delete-post {
+  color: #797979;
+  font-weight: bold;
+}
+
